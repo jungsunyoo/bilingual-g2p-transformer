@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="yjs0@13.125.199.191:22" showNewOnTargetInSync="false">
+    <serverData>
+      <paths name="yjs0@10.122.64.108:22">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tmp/pycharm_project_858" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="yjs0@13.125.199.191:22">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tmp/pycharm_project_769" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>
