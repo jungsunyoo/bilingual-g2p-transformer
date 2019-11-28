@@ -28,21 +28,6 @@ def load_vocab(vocab_fpath):
     Returns
     two dictionaries.
     '''
-    #    vocab = [line.split()[0] for line in open(vocab_fpath, 'r').read().splitlines()]
-    #    pdb.set_trace()
-
-    #            self.graphemes = ["<pad>", "<unk>", "</s>"] + list("abcdefghijklmnopqrstuvwxyz")
-    #        self.phonemes = ["<pad>", "<unk>", "<s>", "</s>"] + ['AA0', 'AA1', 'AA2', 'AE0', 'AE1', 'AE2', 'AH0', 'AH1', 'AH2', 'AO0',
-    #                                                             'AO1', 'AO2', 'AW0', 'AW1', 'AW2', 'AY0', 'AY1', 'AY2', 'B', 'CH', 'D', 'DH',
-    #                                                             'EH0', 'EH1', 'EH2', 'ER0', 'ER1', 'ER2', 'EY0', 'EY1',
-    #                                                             'EY2', 'F', 'G', 'HH',
-    #                                                             'IH0', 'IH1', 'IH2', 'IY0', 'IY1', 'IY2', 'JH', 'K', 'L',
-    #                                                             'M', 'N', 'NG', 'OW0', 'OW1',
-    #                                                             'OW2', 'OY0', 'OY1', 'OY2', 'P', 'R', 'S', 'SH', 'T', 'TH',
-    #                                                             'UH0', 'UH1', 'UH2', 'UW',
-    #                                                             'UW0', 'UW1', 'UW2', 'V', 'W', 'Y', 'Z', 'ZH']
-    #        self.g2idx = {g: idx for idx, g in enumerate(self.graphemes)}
-    #        self.idx2g = {idx: g for idx, g in enumerate(self.graphemes)}
 
     vocab = ["<pad>", "<unk>", "<s>", "</s>", " ", "◎"] + list("abcdefghijklmnopqrstuvwxyz") + ['AA', 'AE', 'AH', 'AO',
                                                                                                 'AW', 'AY', 'B', 'CH',
@@ -76,13 +61,11 @@ def load_data(fpath1, fpath2, maxlen1, maxlen2):
     sents2: list of target sents
     '''
     sents1, sents2 = [], []
-    #    with open(fpath1, 'r') as f1, open(fpath2, 'r') as f2:
 
     with open(fpath1, 'rt', encoding='UTF-8') as f1, open(fpath2, 'rt', encoding='UTF-8') as f2:
         for sent1, sent2 in zip(f1, f2):
             if len(sent1.split()) + 1 > maxlen1: continue  # 1: </s>
             if len(sent2.split()) + 1 > maxlen2: continue  # 1: </s>
-            #            pdb.set_trace()
             sent1 = re.sub("\n", "", sent1)
             sent2 = re.sub("\n", "", sent2)
 
@@ -99,19 +82,12 @@ def load_data(fpath1, fpath2, maxlen1, maxlen2):
                 sent1 = re.sub(" ", "◎", sent11)
                 sent2 = re.sub(" ", "◎", sent22)
 
-            #            pattern2 = '[}{!?."]'
-            #            sent1 = re.sub(pattern=pattern2, repl='', string=sent1)
-            #            sent2 = re.sub(pattern=pattern2, repl='', string=sent2)
-
             sents1.append(sent1.strip())
             sents2.append(sent2.strip())
     return sents1, sents2
 
 
 def clean_str(text):
-    #     cleaned_text = re.sub('[a-zA-Z]', '',text)
-    #     cleaned_text = re.sub('[0-9]', '',cleaned_text)
-    #     cleaned_text = re.sub('[→…★\\{\\}\\[\\]新\\/?.,;:⑦|\\♥)*~`·!^\\-_+<>@\\#$%&\\\\\\=\\(\\[]', '', cleaned_text)
     pattern = '([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)'  # E-mail제거
     text = re.sub(pattern=pattern, repl='', string=text)
     pattern = '(http|ftp|https)://(?:[-\w.]|(?:%[\da-fA-F]{2}))+'  # URL제거
@@ -126,7 +102,6 @@ def clean_str(text):
 
 
 def encode(inp, type, dict):
-    # def encode(inp, type, dict):
     '''Converts string to number. Used for `generator_fn`.
     inp: 1d byte array.
     type: "x" (source side) or "y" (target side)
@@ -135,19 +110,7 @@ def encode(inp, type, dict):
     Returns
     list of numbers
     '''
-    #pdb.set_trace()
-    #    inp_str=inp
-
-    # inp_str = re.sub("b'", "", inp_str)
-    # inp_str = re.sub("'", "", inp_str)
-    #    inp_str = inp
-
-    #inp_str = inp
     inp_str = inp.decode("UTF-8")
-    #
-    # YJS changed: according to paper, <s> and </s> in both source and target
-    #    tokens = ["<s>"] + inp_str.split() + ["</s>"]
-    # =============================================================================
     if type == "x":
         tokens = list(inp_str) + ["</s>"]
     else:
@@ -157,22 +120,6 @@ def encode(inp, type, dict):
             tokens = ["<s>"] + list(inp_str) + ["</s>"] # If Korean PHONEME
 
 
-        # YJS comment: Eng: inp_str.split; Kor: list(inp_str)
-
-    #    if type == "x":
-#        tokens = list(inp_str) + ["</s>"]
-#    else:
-#        tokens = ["<s>"] + inp_str.split() + ["</s>"]
-#        if np.shape(tokens) == (3,):  # If inp_str.split is no effect -> equals Korean!!!
-        #tokens = ["<s>"] + list(inp_str) + ["</s>"]
-
-    #        tokens = ["<s>"] + list(inp_str) + ["</s>"]
-    # tokens = ["<s>"] + list(inp_str) + ["</s>"]
-
-    #     if type=="x": tokens = inp_str.split() + ["</s>"]
-    #     else: tokens = ["<s>"] + inp_str.split() + ["</s>"]
-    #
-    # =============================================================================
     x = [dict.get(t, dict["<unk>"]) for t in tokens]
     return x
 
@@ -194,11 +141,8 @@ def generator_fn(sents1, sents2, vocab_fpath):
         y_seqlen: int. sequence length of y
         sent2: str. target sentence
     '''
-    #    pdb.set_trace()
     token2idx, _ = load_vocab(vocab_fpath)
     for sent1, sent2 in zip(sents1, sents2):
-        #        pdb.set_trace()
-        #        if language=='english':
         x = encode(sent1, "x", token2idx)
         y = encode(sent2, "y", token2idx)
 
@@ -264,13 +208,7 @@ def get_batch(fpath1, fpath2, maxlen1, maxlen2, vocab_fpath, batch_size, shuffle
     num_batches: number of mini-batches
     num_samples
     '''
-    # YJS changed for ENG / KOREAN
-    #    if language=='english':
     sents1, sents2 = load_data(fpath1, fpath2, maxlen1, maxlen2)
-    #    else:
-    #        sents1, sents2 = load_data_kor(fpath1, fpath2, maxlen1, maxlen2)
-    #
-    # pdb.set_trace()
     batches = input_fn(sents1, sents2, vocab_fpath, batch_size, shuffle=shuffle)
     num_batches = calc_num_batches(len(sents1), batch_size)
     return batches, num_batches, len(sents1)

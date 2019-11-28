@@ -1,7 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="438ae840-b5f6-4cab-8ce0-831e5fe7ab4c" name="Default Changelist" comment="" />
+    <list default="true" id="438ae840-b5f6-4cab-8ce0-831e5fe7ab4c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmudict/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmudict/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmudict/README.developer" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmudict/cmudict.dict" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmudict/cmudict.dict.part.dev" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmudict/cmudict.dict.part.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmudict/cmudict.dict.part.train" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmudict/cmudict.dict.part.train.part.dev" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmudict/cmudict.dict.part.train.part.dev.cleanup" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmudict/cmudict.dict.part.train.part.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmudict/cmudict.dict.part.train.part.test.cleanup" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmudict/cmudict.dict.part.train.part.train" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmudict/cmudict.dict.part.train.part.train.cleanup" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmudict/cmudict.dict.part.yjs.test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmudict/cmudict.dict.part.yjs.test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmudict/cmudict.phones" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmudict/cmudict.symbols" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmudict/cmudict.vp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmudict/yjs_test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv/grapheme_train.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv/grapheme_val.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv/phoneme_train.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv/phoneme_val.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/download.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/english_sentences.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fig/bleu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fig/loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fig/lr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/de-en/IWSLT16.TED.dev2010.de-en.de.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/de-en/IWSLT16.TED.dev2010.de-en.en.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/de-en/IWSLT16.TED.tst2010.de-en.de.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/de-en/IWSLT16.TED.tst2010.de-en.en.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/de-en/IWSLT16.TED.tst2011.de-en.de.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/de-en/IWSLT16.TED.tst2011.de-en.en.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/de-en/IWSLT16.TED.tst2012.de-en.de.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/de-en/IWSLT16.TED.tst2012.de-en.en.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/de-en/IWSLT16.TED.tst2013.de-en.de.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/de-en/IWSLT16.TED.tst2013.de-en.en.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/de-en/IWSLT16.TED.tst2014.de-en.de.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/de-en/IWSLT16.TED.tst2014.de-en.en.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/de-en/IWSLT16.TEDX.dev2012.de-en.de.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/de-en/IWSLT16.TEDX.dev2012.de-en.en.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/de-en/IWSLT16.TEDX.tst2013.de-en.de.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/de-en/IWSLT16.TEDX.tst2013.de-en.en.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/de-en/IWSLT16.TEDX.tst2014.de-en.de.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/de-en/IWSLT16.TEDX.tst2014.de-en.en.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/de-en/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/de-en/train.en" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/de-en/train.tags.de-en.de" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/de-en/train.tags.de-en.en" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/prepro/eval.de" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/prepro/eval.en" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/prepro/test.de" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/prepro/test.en" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/prepro/train" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/prepro/train.de" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/prepro/train.en" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/segmented/bpe.model" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/segmented/bpe.vocab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/segmented/eval.de.bpe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/segmented/eval.en.bpe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/segmented/test.de.bpe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/segmented/test.en.bpe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/segmented/train.de.bpe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iwslt2016/segmented/train.en.bpe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/multi-bleu.perl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test3.csv" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +95,11 @@
   <component name="FavoritesManager">
     <favorites_list name="transformer" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1TEO7EXks4aOcesK3izEsU03vOp" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/sentences" />
@@ -103,6 +177,9 @@
       <module name="transformer" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -195,11 +272,23 @@
       <workItem from="1574622073632" duration="5462000" />
       <workItem from="1574657705946" duration="3356000" />
       <workItem from="1574661807790" duration="686000" />
+      <workItem from="1574945433995" duration="32000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/transformer$utils.coverage" NAME="utils Coverage Results" MODIFIED="1573028442552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

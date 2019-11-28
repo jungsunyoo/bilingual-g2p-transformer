@@ -9,8 +9,6 @@ Utility functions
 """
 
 import tensorflow as tf
-# from tensorflow.python import pywrap_tensorflow
-# import numpy as np
 import json
 import os, re
 import logging
@@ -70,14 +68,11 @@ def postprocess(hypotheses, idx2token):
     Returns
     processed hypotheses
     """
-    # pdb.set_trace()
     _hypotheses = []
     for h in hypotheses:
-#        pdb.set_trace()
 
         a = ' '    
         sent =a.join(idx2token[idx] for idx in h)
-#        sent = idx2token[idx] + "/t" for idx in h
         sent = sent.split("</s>")[0].strip()
         sent = sent.replace("▁", " ")  # remove bpe symbols
         _hypotheses.append(sent.strip())

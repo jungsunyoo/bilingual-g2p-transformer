@@ -31,10 +31,8 @@ class Transformer:
     training: boolean.
     '''
     def __init__(self, hp):
-#        pdb.set_trace()
         self.hp = hp
         self.token2idx, self.idx2token = load_vocab(hp.vocab)
-#        self.g2idx, self.idx2g, self.p2idx, self.idx2p = load_vocab(hp.vocab)
         self.embeddings = get_token_embeddings(self.hp.vocab_size, self.hp.d_model, zero_pad=True)
 
     def encode(self, xs, training=True):
@@ -139,7 +137,6 @@ class Transformer:
         summaries: training summary node
         '''
         # forward
-#        pdb.set_trace()
         memory, sents1, src_masks = self.encode(xs)
         logits, preds, y, sents2 = self.decode(ys, memory, src_masks)
 
@@ -186,7 +183,6 @@ class Transformer:
             ys = (_decoder_inputs, y, y_seqlen, sents2)
 
         # monitor a random sample
-#        pdb.set_trace()
         n = tf.random_uniform((), 0, tf.shape(y_hat)[0]-1, tf.int32)
         sent1 = sents1[n]
         pred = convert_idx_to_token_tensor(y_hat[n], self.idx2token)

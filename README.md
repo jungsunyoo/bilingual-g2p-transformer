@@ -1,47 +1,38 @@
-# **[UPDATED]** A TensorFlow Implementation of [Attention Is All You Need](https://arxiv.org/abs/1706.03762)
+# A transformer-based multilingual (English & Korean) grapheme-to-phoneme (G2P) converter
 
-When I opened this repository in 2017, there was no official code yet.
-I tried to implement the paper as I understood, but to no surprise
-it had several bugs. I realized them mostly thanks to people who issued here, so
-I'm very grateful to all of them. Though there is the [official implementation](https://github.com/tensorflow/tensor2tensor) as well as
-several other unofficial github repos, I decided to update my own one.
-This update focuses on:
-* readable / understandable code writing
-* modularization (but not too much)
-* revising known bugs. (masking, positional encoding, ...)
-* updating to TF1.12. (tf.data, ...)
-* adding some missing components (bpe, shared weight matrix, ...)
-* including useful comments in the code.
-
-I still stick to IWSLT 2016 de-en. I guess if you'd like to test on a big data such
-as WMT, you would rely on the official implementation.
-After all, it's pleasant to check quickly if your model works.
-The initial code for TF1.2 is moved to the [tf1.2_lecacy](tf1.2_legacy) folder for the record.
+Created by Jungsun Yoo.
+This is an end-to-end neural engine which converts English/Korean sentences into phonemes. 
+This code is heavily based on [A TensorFlow Implementation of The Transformer: Attention Is All You Need by Kyubyong](https://github.com/Kyubyong/transformer).
 
 ## Requirements
-* python==3.x (Let's move on to python 3 if you still use python 2)
+* python==3.x 
 * tensorflow==1.12.0
 * numpy>=1.15.4
 * sentencepiece==0.1.8
 * tqdm>=4.28.1
 
-## Training
-* STEP 1. Run the command below to download [IWSLT 2016 German–English parallel corpus](https://wit3.fbk.eu/download.php?release=2016-01&type=texts&slang=de&tlang=en).
-```
-bash download.sh
-```
- It should be extracted to `iwslt2016/de-en` folder automatically.
-* STEP 2. Run the command below to create preprocessed train/eval/test data.
-```
-python prepro.py
-```
-If you want to change the vocabulary size (default:32000), do this.
-```
-python prepro.py --vocab_size 8000
-```
-It should create two folders `iwslt2016/prepro` and `iwslt2016/segmented`.
+## Datasets
 
-* STEP 3. Run the following command.
+Under the folder 'sentences,' you should have parallel sets of grapheme and phonemes (both Korean and English) divided into train, test, and eval.
+File format should be .bpe and encoding should be in unicode-8.
+For English phonemes, each word should be wrapped in curly brackets. For Korean phonemes, a space between words is enough.
+For example, there should be six bpe files named as: train.grapheme.bpe, train.phoneme.bpe, eval.grapheme.bpe, eval. phoneme.bpe, test.grapheme.bpe, and test.phoneme.bpe.
+And an exemplar grapheme.bpe might look like: 
+
+```
+it's okay.
+포장배송, 송장등록
+```
+
+And its corresponding (parallel) phoneme.bpe might look like: 
+
+```
+{IH T S} {OW K EY}.
+포장배송, 송짱등록
+```
+
+## Training
+* STEPS. Run the following command.
 ```
 python train.py
 ```
@@ -50,20 +41,8 @@ Check `hparams.py` to see which parameters are possible. For example,
 python train.py --logdir myLog --batch_size 256 --dropout_rate 0.5
 ```
 
-* STEP 3. Or download the pretrained models.
-```
-wget https://dl.dropbox.com/s/4lom1czy5xfzr4q/log.zip; unzip log.zip; rm log.zip
-```
-
-
 ## Training Loss Curve
-<img src="fig/loss.png">
-
-## Learning rate
-<img src="fig/lr.png">
-
-## Bleu score on devset
-<img src="fig/bleu.png">
+<img src="fig/loss_curve.png">
 
 
 ## Inference (=test)
@@ -73,13 +52,8 @@ python test.py --ckpt log/1/iwslt2016_E19L2.64-29146 (OR yourCkptFile OR yourCkp
 ```
 
 ## Results
-* Typically, machine translation is evaluated with Bleu score.
+* Run
+```
+python test_performance.py --ckpt log/1/iwslt2016_E19L2.64-29146 (OR yourCkptFile OR yourCkptFileDirectory)
+```
 * All evaluation results are available in [eval/1](eval/1) and [test/1](test/1).
-
-|tst2013 (dev) | tst2014 (test) |
-|--|--|
-|28.06|23.88|
-
-## Notes
-* Beam decoding will be added soon.
-* I'm going to update the code when TF2.0 comes out if possible.
