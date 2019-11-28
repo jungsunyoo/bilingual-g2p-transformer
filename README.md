@@ -42,7 +42,7 @@ python train.py --logdir myLog --batch_size 256 --dropout_rate 0.5
 ```
 
 ## Training Loss Curve
-<img src="fig/loss_curve.png">
+<img src="pics/loss_curve.png">
 
 
 ## Inference (=test)
